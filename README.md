@@ -41,42 +41,42 @@ Feedback is provided in terms of heuristic function
 <hr>
 <h2>Sample Input and Output</h2>
 <p>
- import random
-import string
-def generate_random_solution(answer):
-    l=len(answer)
-    return [random.choice(string.printable) for _ in range(l)]
-def evaluate(solution,answer):
-    print(solution)
-    target=list(answer)
-    diff=0
-    for i in range(len(target)):
-        s=solution[i]
-        t=target[i]
-        diff +=abs(ord(s)-ord(t))
-    return diff
-def mutate_solution(solution):
-    ind=random.randint(0,len(solution)-1)
-    solution[ind]=random.choice(string.printable)
-    return solution
-def SimpleHillClimbing():
-    answer="Artificial Intelligence"
-    best=generate_random_solution(answer)
-    best_score=evaluate(best,answer)
-    while True:
-        print("Score:",best_score," Solution : ","".join(best))  
-        if best_score==0:
-            break
-        new_solution=mutate_solution(list(best))
-        score=evaluate(new_solution,answer)   
-        if score<best_score:
-            best=new_solution
-            best_score=score
-#answer="Artificial Intelligence"
-#print(generate_random_solution(answer))
-#solution=generate_random_solution(answer)
-#print(evaluate(solution,answer))
-SimpleHillClimbing()
+ import random<br>
+import string<br>
+def generate_random_solution(answer):<br>
+    l=len(answer)<br>
+    return [random.choice(string.printable) for _ in range(l)]<br>
+def evaluate(solution,answer):<br>
+    print(solution)<br>
+    target=list(answer)<br>
+    diff=0<br>
+    for i in range(len(target)):<br>
+        s=solution[i]<br>
+        t=target[i]<br>
+        diff +=abs(ord(s)-ord(t))<br>
+    return diff<br>
+def mutate_solution(solution):<br>
+    ind=random.randint(0,len(solution)-1)<br>
+    solution[ind]=random.choice(string.printable)<br>
+    return solution<br>
+def SimpleHillClimbing():<br>
+    answer="Artificial Intelligence"<br>
+    best=generate_random_solution(answer)<br>
+    best_score=evaluate(best,answer)<br>
+    while True:<br>
+        print("Score:",best_score," Solution : ","".join(best))<br>  
+        if best_score==0:<br>
+            break<br>
+        new_solution=mutate_solution(list(best))<br>
+        score=evaluate(new_solution,answer)   <br>
+        if score<best_score:<br>
+            best=new_solution<br>
+            best_score=score<br>
+#answer="Artificial Intelligence"<br>
+#print(generate_random_solution(answer))<br>
+#solution=generate_random_solution(answer)<br>
+#print(evaluate(solution,answer))<br>
+SimpleHillClimbing()<br>
 </p>
 
 <h2>Sample String:</h2> Artificial Intelligence
